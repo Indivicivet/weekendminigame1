@@ -32,7 +32,7 @@ public class MagicalCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        magicPhase += Time.deltaTime * magicPhaseRate;
+        magicPhase += Time.deltaTime * magicPhaseRate * (gameState.active ? 1 : 0.3f);
         var magicScore01 = (1 + Mathf.Cos(magicPhase)) / 2;
         var active_scale = active ? 1 : 0.2f;
         GetComponent<Renderer>().material.color = new Color(

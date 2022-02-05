@@ -349,6 +349,7 @@
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/GameState.cs"
 "Assets/MagicalCube.cs"
+"Assets/OnlyShowIfGameComplete.cs"
 "Assets/ScoreText.cs"
 "Assets/Scripts/SimpleCameraController.cs"
 "Assets/TimerVisualizer.cs"
