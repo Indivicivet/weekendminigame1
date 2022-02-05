@@ -24,7 +24,7 @@ public class MagicalCube : MonoBehaviour
         gameState = GameObject.Find("GameStateHolder").GetComponent<GameState>();
 
         magicPhase = Random.Range(0, 2 * Mathf.PI);
-        magicPhaseRate = Random.Range(0.5f, 5.0f);
+        magicPhaseRate = Random.Range(0.5f, 4.0f);
 
         tTilActive = Random.Range(0, 1.0f);
     }
