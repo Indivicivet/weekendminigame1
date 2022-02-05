@@ -16,6 +16,8 @@ public class GameState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // todo :: make the game end!
+        // todo :: show timer!
         // score += 0.01f;
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MagicalCube : MonoBehaviour
 {
+    // todo:: random cube score rate? signified by some kind of brightness, or cube size, or something?
+    
     [SerializeField]
     private float magicPhase;
 
