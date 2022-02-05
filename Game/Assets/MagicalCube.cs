@@ -5,7 +5,7 @@ using UnityEngine;
 public class MagicalCube : MonoBehaviour
 {
     [SerializeField]
-    private float magicPhase = 0.3f;
+    private float magicPhase;
 
     [SerializeField]
     private float magicPhaseRate = 1.8f;
@@ -17,6 +17,9 @@ public class MagicalCube : MonoBehaviour
     {
         // todo :: not the best way to do this? ^^'
         gameState = GameObject.Find("GameStateHolder").GetComponent<GameState>();
+
+        magicPhase = Random.Range(0, 2 * Mathf.PI);
+        magicPhaseRate = Random.Range(0.5f, 3.5f);
     }
 
     // Update is called once per frame

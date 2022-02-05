@@ -18,6 +18,6 @@ public class ScoreText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshPro>().SetText(gameState.score.ToString("F2"));
+        GetComponent<TextMeshPro>().SetText("Score: " + gameState.score.ToString("F2"));
     }
 }
