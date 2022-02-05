@@ -24,7 +24,7 @@ public class ScoreText : MonoBehaviour
     {
         GetComponent<TextMeshPro>().SetText("Score: " + gameState.score.ToString("F2"));
 
-        var rescale = 0.5f + 0.8f * Mathf.Max(Mathf.Atan(gameState.score * 0.2f) / (Mathf.PI * 0.5f), 0.0f);
+        var rescale = 0.5f + 0.8f * Mathf.Max(Mathf.Atan(gameState.score * 0.17f) / (Mathf.PI * 0.5f), 0.0f);
         GetComponent<Transform>().localScale = referenceScale * rescale;
     }
 }
