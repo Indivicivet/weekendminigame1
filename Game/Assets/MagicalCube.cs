@@ -5,14 +5,17 @@ using UnityEngine;
 public class MagicalCube : MonoBehaviour
 {
     // todo:: random cube score rate? signified by some kind of brightness, or cube size, or something?
-    
-    [SerializeField]
+
     private float magicPhase;
 
-    [SerializeField]
     private float magicPhaseRate = 1.8f;
 
     private GameState gameState;
+
+    private float tTilActive = 0.0f;
+    private const float inactiveTime = 0.5f;
+
+    private bool active {get { return tTilActive <= 0; }}
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,9 @@ public class MagicalCube : MonoBehaviour
         gameState = GameObject.Find("GameStateHolder").GetComponent<GameState>();
 
         magicPhase = Random.Range(0, 2 * Mathf.PI);
-        magicPhaseRate = Random.Range(0.5f, 3.5f);
+        magicPhaseRate = Random.Range(0.5f, 5.0f);
+
+        tTilActive = Random.Range(0, 1.0f);
     }
 
     // Update is called once per frame
@@ -29,11 +34,26 @@ public class MagicalCube : MonoBehaviour
     {
         magicPhase += Time.deltaTime * magicPhaseRate;
         var magicScore01 = (1 + Mathf.Cos(magicPhase)) / 2;
-        GetComponent<Renderer>().material.color = new Color(1 - magicScore01, magicScore01, 0);
+        var active_scale = active ? 1 : 0.2f;
+        GetComponent<Renderer>().material.color = new Color(
+            (1 - magicScore01) * active_scale,
+            magicScore01 * active_scale,
+            0
+        );
+
+        if (tTilActive > 0) {
+            tTilActive -= Time.deltaTime;
+            if (tTilActive < 0) {
+                tTilActive = 0;
+            }
+        }
     }
 
     void OnMouseDown()
     {
-        gameState.score += Mathf.Cos(magicPhase);
+        if (active) {
+            gameState.score += Mathf.Cos(magicPhase);
+            tTilActive = inactiveTime;
+        }
     }
 }
