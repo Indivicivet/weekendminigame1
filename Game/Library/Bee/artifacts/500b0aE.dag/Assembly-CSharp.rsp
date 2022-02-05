@@ -351,6 +351,7 @@
 "Assets/MagicalCube.cs"
 "Assets/ScoreText.cs"
 "Assets/Scripts/SimpleCameraController.cs"
+"Assets/TimerVisualizer.cs"
 -langversion:9.0
 
 /deterministic
