@@ -10,6 +10,8 @@ public class GameState : MonoBehaviour
     public float totalTime = 20.0f;
     public float timeLeft;
 
+    public bool active {get {return timeLeft > 0; }}
+
     // Start is called before the first frame update
     void Start()
     {

@@ -51,7 +51,7 @@ public class MagicalCube : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (active) {
+        if (active && gameState.active) {
             gameState.score += Mathf.Cos(magicPhase);
             tTilActive = inactiveTime;
         }
